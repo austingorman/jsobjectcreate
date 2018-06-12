@@ -19,7 +19,7 @@ const coolObject = Object.create({}, {
     value: [
       {
         type: "Purchase",
-        ticker: "AALP",
+        ticker: "AAAA",
         shares: 2,
         valuation: 300
       },
@@ -27,18 +27,19 @@ const coolObject = Object.create({}, {
         type: "Purchase",
         ticker: "AALP",
         shares: 2,
-        valuation: 400
+        valuation: 200
       }
     ]
   },
   worth: {
     writable: true,
     value: function () {
-      let netWorth = 0;
       for (let i = 0; i < coolObject.portfolio.length; i++) {
         if (coolObject.portfolio[i].type === "Purchase") {
-          newWorth = netWorth + (coolObject.portfolio[i].shares * coolObject.portfolio[i].valuation)
+          let netWorth = 0;
+          netWorth = netWorth + (coolObject.portfolio[i].shares * coolObject.portfolio[i].valuation)
           // return netWorth
+          console.log(netWorth)
         }
       }
     }
